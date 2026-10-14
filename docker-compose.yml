@@ -1,14 +1,13 @@
 services:
   web:
-    build: web
+    image: edvaelle/wordsmith:web-latest
     ports:
       - 8080:80
     volumes:
       - ./web/static:/static
   db:
-    build: db
+    image: edvaelle/wordsmith:db-latest
   words:
-    build: words
+    image: edvaelle/wordsmith:words-latest
     depends_on:
       - db
-
