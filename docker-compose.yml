@@ -1,0 +1,14 @@
+services:
+  web:
+    build: web
+    ports:
+      - 8080:80
+    volumes:
+      - ./web/static:/static
+  db:
+    build: db
+  words:
+    build: words
+    depends_on:
+      - db
+
